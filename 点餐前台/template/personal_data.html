@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style>
+		#head {
+			overflow: hidden;
+			background: #fff;
+			height: 70px;
+			line-height: 70px;
+		}
+		
+		.head_name {
+			margin-left: 10px;
+			float: left;
+		}
+		
+		.head_off,.head_on {
+			margin-right: 10px;
+			text-align: center;
+			margin-top: 10px;
+			border-radius: 50%;
+			float: right;
+			border: 1px solid #ccc;
+			height: 50px;
+			width: 50px;
+			line-height: 50px;
+		}
+		.head_on{
+			display: none;
+			background: url(../img/head.png) no-repeat;
+			background-size: cover;
+		}
+		.head_off img {
+			width: 20px;
+			margin-top: 10px;
+		}
+		
+		.login_name {
+			margin-top: 20px;
+			height: 40px;
+			line-height: 40px;
+			background: #fff;
+			overflow: hidden;
+		}
+		
+		.login_name div {
+			margin-left: 10px;
+			float: left;
+		}
+		
+		.login_name p {
+			margin-right: 10px;
+			float: right;
+		}
+		
+		.back {
+			margin-right: 10px;
+			margin-top: 12px;
+			width: 7px;
+			float: right;
+		}
+		
+		.list {
+			margin-top: 10px;
+		}
+		
+		.list li div {
+			height: 40px;
+			line-height: 40px;
+			font-size: 14px;
+			margin-left: 10px;
+		}
+		
+		.phone {
+			border-bottom: 1px solid #E6E6E6;
+		}
+		
+		.phone_num {
+			float: right;
+			margin-right: 10px;
+		}
+	</style>
+
+	<body>
+		<div class="mui-content">
+			<div id="head">
+				<div class="head_name">头像</div>
+				<div class="head_off"><img src="../img/touxiang_off.png" /></div>
+				<div class="head_on"></div>
+			</div>
+			<div class="login_name">
+				<div>登录名称</div>
+				<p>白筱屹</p>
+			</div>
+			<ul class="list">
+				<li id="./phone_num.html" onclick="turn(this.id)">
+					<div class="phone">手机号码
+						<img src="../img/back.png" class="back" alt="" />
+						<span class="phone_num">186 0000 6666</span>
+					</div>
+				</li>
+				<li id="./password.html" onclick="turn(this.id)">
+					<div class="">修改密码<img src="../img/back.png" class="back" alt="" /></div>
+				</li>
+			</ul>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jq.js"></script>
+		<script type="text/javascript">
+			mui.init();
+
+			$('.head_off').click(function() {
+				$(this).hide();
+				$('.head_on').show();
+			})
+			function turn(el){
+				window.location.href=el
+			}
+		</script>
+	</body>
+
+</html>

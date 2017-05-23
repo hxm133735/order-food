@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>修改</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="http://testcookingstc.payweipan.com/css/mobile/mui.min.css" rel="stylesheet" />
+		<link href="http://testcookingstc.payweipan.com/css/mobile/welcome.css" rel="stylesheet" />
+	</head>
+	<style>
+		body {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+		}
+		
+		.content {
+			background: #fff;
+			padding-bottom: 15px;
+		}
+		
+		.some_people {
+			padding: 20px 0 10px 20px;
+		}
+		
+		.some_people span {
+			border-left: 4px solid #FF5242;
+			padding-left: 10px;
+		}
+		
+		.content {
+			margin-top: 0;
+		}
+		
+		
+		
+		.info_food {
+			padding-top: 10px;
+			margin-top: 10px;
+		}
+		
+		footer {
+			background: #fff;
+		}
+		
+		header {
+			font-size: 16px;
+			padding: 10px 0;
+			background: #fff;
+			margin-bottom: 10px;
+		}
+		
+		.start {
+			font-size: 1.33333rem;
+			margin: 1.66667rem 0;
+			width: 88%;
+			border: 0;
+			background: #e1e1e1;
+			color: #fff;
+			border-radius: 0.41667rem;
+			padding: 0.91667rem 0;
+		}
+	</style>
+
+	<body>
+		<header class="mui-text-center">
+			桌位编号：<span>B560</span>
+		</header>
+		<div class="mui-content">
+
+			<div class="content">
+				<div class="mui-text-left some_people">
+					<span>就餐人数：</span>
+				</div>
+				<div class="mui-row">
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">1人</button></div>
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">2人</button></div>
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">3人</button></div>
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">4人</button></div>
+				</div>
+				<div class="mui-row">
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">5人</button></div>
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">6人</button></div>
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">7人</button></div>
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">8人</button></div>
+				</div>
+				<div class="mui-row">
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">9人</button></div>
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">10人</button></div>
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">11人</button></div>
+					<div class="mui-col-xs-3"><button type="button" style="display: none;" class="mui-btn">12人</button></div>
+					<div class="mui-col-xs-3"><button type="button" class="more">更多<img src="http://testcookingstc.payweipan.com/img/mobile/to.png" alt="" /></button></div>
+				</div>
+				<div class="mui-row" style=" display: none;">
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">13人</button></div>
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">14人</button></div>
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">15人</button></div>
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">16人</button></div>
+				</div>
+				<div class="mui-row" style=" display: none;">
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">17人</button></div>
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">18人</button></div>
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">19人</button></div>
+					<div class="mui-col-xs-3"><button type="button" class="mui-btn">20人</button></div>
+				</div>
+
+			</div>
+			<footer>
+
+				<div class="mui-text-center btns">
+					<button type="button" class="start" id="./food.html" onclick="clicked(this.id)">确定</button>
+				</div>
+			</footer>
+		</div>
+
+		<script src="http://testcookingstc.payweipan.com/js/mobile/mui.min.js"></script>
+		<script src="http://testcookingstc.payweipan.com/js/mobile/common.js"></script>
+		<script src="http://testcookingstc.payweipan.com/js/mobile/jq.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			//字体自适应
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '24px';
+						} else {
+							docEl.style.fontSize = 24 * (clientWidth / 640) + 'px';
+						}
+					};
+
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+			$('.mui-btn').click(function() {
+				$('.start').css('background', '#FF5242');
+				$('.start').removeAttr('disabled');
+				$('.auto').css('color', '#3E3E3E');
+				$('.auto').removeAttr('disabled');
+				$('#num').val('');
+				var people = $(this).text()
+				$('.mui-btn').css('background', '#fff');
+				$('.mui-btn').css('color', '#333');
+				$(this).css('background', '#FF5242');
+				$(this).css('color', '#fff');
+			})
+			$('#num').click(function() {
+				$('.mui-btn').css('background', '#fff');
+				$('.mui-btn').css('color', '#333');
+			})
+			$('.more').click(function() {
+				$('.more').hide();
+				$('.mui-btn,.mui-row').show()
+			})
+		</script>
+	</body>
+
+</html>

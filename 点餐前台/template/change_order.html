@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style>
+		body {
+			font-size: 14px;
+		}
+		
+		.note input {
+			padding-left: 10px;
+			margin: 0;
+			width: 80%;
+			font-size: 13px;
+			border: none;
+		}
+		
+		.note {
+			margin-top: 10px;
+			padding: 0 0 0 15px;
+			background: #fff;
+		}
+		
+		.right {
+			margin-left: 10px;
+		}
+		
+		.start {
+			font-size: 14px;
+			margin: 40px 0;
+			width: 88%;
+			border: 0;
+			background: #FF5242;
+			color: #fff;
+			border-radius: 7px;
+			padding: 10px 0;
+		}
+	</style>
+
+	<body>
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						桌位&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="right">A53</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						用餐人数 <span class="right">4人</span>
+					</a>
+				</li>
+			</ul>
+			<div class="note">
+				订单备注 <input type="text" name="" id="" value="" placeholder="请在此输入备注信息，例如: 不要辣等" />
+			</div>
+		</div>
+		<footer>
+			<div class="mui-text-center">
+				<a type="button" class="mui-btn start" href="javascript:history.back()">保存</a>
+			</div>
+		</footer>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

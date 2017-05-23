@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>已下单的菜</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="http://testcookingstc.payweipan.com/css/mobile/mui.min.css" rel="stylesheet" />
+		<link href="http://testcookingstc.payweipan.com/css/mobile/already.css" rel="stylesheet" />
+	</head>
+	<style>
+		body {
+			position: relative;
+		}
+		
+		#pay_online {
+			background: #FF5242;
+			color: #fff;
+		}
+		
+		.modal {
+			display: none;
+			position: absolute;
+			background: #000;
+			z-index: 100;
+			height: 100%;
+			width: 100%;
+		}
+		
+		.alert_box {
+			display: none;
+			border-radius: 0.83333rem;
+			margin-left: 5%;
+			width: 90%;
+			z-index: 999;
+			position: fixed;
+			top: 50%;
+			margin-top: -150px;
+			/*left: 50%;*/
+			background: #fff;
+		}
+		
+		.food_title {
+			/*margin-top: 20px;*/
+			font-size: 1.33333rem;
+			font-weight: bold;
+		}
+		
+		.food_title span {
+			color: #E3E3E3;
+			padding: 1.25rem;
+		}
+		
+		.alert_con {
+			width: 90%;
+			margin: 0 auto;
+		}
+		
+		.alert_con div:nth-child(1) {
+			margin-top: 10px;
+			border-top: 1px solid #e6e6e6;
+		}
+		
+		.alert_con div {
+			font-size: 13px;
+			padding: 15px 0;
+			border-bottom: 1px solid #e6e6e6;
+		}
+		
+		.alert_foot {
+			margin-bottom: 10px;
+			padding: 20px 0;
+			text-align: center;
+		}
+		
+		.alert_foot button {
+			padding: 10px 0;
+			width: 90%;
+			background: #FF5242;
+			color: #fff;
+			border-radius: 7px;
+			font-size: 14px;
+		}
+		
+		.head_foot {
+			margin: 0 0 10px 0;
+		}
+		
+		.inner_top p {
+			color: #333 !important;
+		}
+		
+		.mid_sum {
+			height: 50px;
+			line-height: 50px;
+			background: #fff;
+			overflow: hidden;
+		}
+		
+		.pay_num {
+			margin-left: 10px;
+			float: left;
+			font-size: 12px;
+		}
+		
+		.pay_num span {
+			color: #333;
+			font-size: 16px;
+		}
+		
+		.wait {
+			color: #FF5242;
+			margin-right: 10px;
+			float: right;
+		}
+		
+		.con_detail p:nth-child(3) {
+			color: #8ED569;
+		}
+		
+		.pay_prev {
+			background: #FF5242;
+			color: #fff;
+		}
+		
+		.modal {
+			position: fixed;
+		}
+	</style>
+
+	<body>
+		<!--<button type="button" class="mui-btn ">按钮</button>-->
+		<div class="modal"></div>
+		<div class="alert_box">
+			<div class="mui-text-center food_title">
+				<span onclick="closeBox()" class="mui-pull-right">X</span><br />&nbsp;&nbsp;&nbsp;付款信息
+			</div>
+			<div class="alert_con">
+				<div class="com">
+					订单金额：<span>￥235.00</span>
+				</div>
+				<div class="com">
+					优惠方式：<span>无</span>
+				</div>
+				<div class="com">
+					付款方式：<span>微信支付</span>
+				</div>
+
+			</div>
+			<div class="alert_foot">
+				<button type="button" class="mui-btn">去支付</button>
+			</div>
+		</div>
+		<div class="head_foot">
+			<div class="foot_inner">
+				<div class="inner_top">
+					<p>用餐人数：<span>6</span>人</p>
+					<p>桌位号码：<span>A53</span></p>
+				</div>
+				<div class="inner_mid">
+					<p>下单时间：<span>2017/05/10 12:56:43</span></p>
+				</div>
+				<div class="inner_foot">
+					<p>订单编号：<span>A467863882737000978</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="mui-content">
+			<div class="mid_sum" id="./change_order.html" onclick="turn(this.id)">
+				<p class="pay_num">订单金额：<span>￥235.00</span></p>
+				<div class="wait">待付款</div>
+			</div>
+			<div class="mid">
+				<div class="mid_head">
+					<img src="http://testcookingstc.payweipan.com/img/mobile/foods_02.png" alt="" />
+					<div class="head_r">
+						<h4>顾客A</h4>
+						<p>点菜数：<span>3</span>份</p>
+					</div>
+				</div>
+				<div class="mid_con">
+					<div>
+						菠萝牛柳饭
+					</div>
+					<div class="con_detail">
+						<p>￥36.00</p>
+						<p>数量: 1份</p>
+						<p>已下厨</p>
+					</div>
+				</div>
+				<div class="mid_con">
+					<div>
+						铁板鱿鱼仔
+					</div>
+					<div class="con_detail">
+						<p>￥42.00</p>
+						<p>数量: 1份</p>
+						<p>已下厨</p>
+					</div>
+				</div>
+				<div class="mid_con">
+					<div>
+						海鲜麻辣香锅
+					</div>
+					<div class="con_detail">
+						<p>￥79.00</p>
+						<p>数量: 1份</p>
+						<p>已下厨</p>
+					</div>
+				</div>
+				<div class="remark">
+					<div class="remark_pad">
+						<span>订单备注：</span>麻烦铁板鱿鱼仔微辣，海鲜麻辣香锅少放蟹 多放点儿虾，谢谢！
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="footer">
+			<div class="continue" id="./food.html" onclick="turn(this.id)">加菜</div>
+			<div class="pay_now pay_prev" id="./pay_ways.html" onclick="turn(this.id)">立即支付</div>
+		</div>
+
+		<script src="http://testcookingstc.payweipan.com/js/mobile/mui.min.js"></script>
+		<script src="http://testcookingstc.payweipan.com/js/mobile/common.js"></script>
+		<script src="http://testcookingstc.payweipan.com/js/mobile/jq.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			//字体自适应
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '24px';
+						} else {
+							docEl.style.fontSize = 24 * (clientWidth / 640) + 'px';
+						}
+					};
+
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+
+			function turn(el) {
+				window.location.href = el;
+			}
+
+			function closeBox(el) {
+				$('.alert_box').hide();
+				$('.modal').hide();
+				$('.modal').css('opacity', '1');
+			}
+
+			function showWays() {
+				$('.alert_box').show();
+				$('.modal').show();
+				$('.modal').css('opacity', '.5');
+			}
+		</script>
+	</body>
+
+</html>

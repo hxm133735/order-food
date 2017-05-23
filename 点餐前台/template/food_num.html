@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>菜单列表</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+		<link rel="stylesheet" href="http://testcookingstc.payweipan.com/css/mobile/mui.min.css">
+		<link rel="stylesheet" href="http://testcookingstc.payweipan.com/css/mobile/food.css">
+
+	</head>
+	<style>
+		.taste {
+			margin: 3px 0 !important;
+			font-size: 12px !important;
+		}
+		
+		.cost {
+			font-size: 12px;
+		}
+		
+		.change {
+			margin-right: 8px;
+			float: right;
+			font-size: 12px;
+		}
+		
+		.back {
+			margin-top: 4px !important;
+			float: right !important;
+			width: 7px !important;
+		}
+	</style>
+
+	<body>
+		<div class="mui-content mui-row mui-fullscreen">
+			<div id="show_one">特色套餐（5）</div>
+			<div class="mui-col-xs-3" style="padding-bottom: 53px;">
+				<div id="segmentedControls" style="font-size: 12px;color: #5a5a5a;" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+				</div>
+			</div>
+			<div id="segmentedControlContents" style="padding-bottom: 53px;" class="mui-col-xs-9">
+
+			</div>
+		</div>
+		<script src="http://testcookingstc.payweipan.com/js/mobile/mui.min.js"></script>
+		<script src="http://testcookingstc.payweipan.com/js/mobile/jq.js"></script>
+		<script>
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			//字体自适应
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '24px';
+						} else {
+							docEl.style.fontSize = 24 * (clientWidth / 640) + 'px';
+						}
+					};
+
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+			document.querySelector('body').addEventListener('touchmove', function(e) {
+				if(!document.querySelector('.mui-content').contains(e.target)) {
+					e.preventDefault();
+				}
+			});
+
+			var height = $('.mui-bar-nav').height();
+			$('.mui-bar-nav~.mui-content').css('margin-top', height);
+			window.onresize = function() {
+				var height = $('.mui-bar-nav').height();
+				$('.mui-bar-nav~.mui-content').css('margin-top', height);
+			}
+			$('#segmentedControlContents').scroll(function() {
+				var scroll = $(this).scrollTop();
+				var height = $('.mui-bar-nav').height();
+				//				console.log(scroll);
+				//				console.log(height);
+				if(height - scroll > 0) {
+					$('.mui-bar-nav~.mui-content').css('margin-top', height - scroll);
+					$('header').show();
+				} else if(height - scroll <= 0) {
+					$('.mui-bar-nav~.mui-content').css('margin-top', '0px');
+					$('header').hide();
+				}
+
+				//				$('.mui-content').css('padding-top', '0px');
+
+			});
+			var controls = document.getElementById("segmentedControls");
+			var contents = document.getElementById("segmentedControlContents");
+			var html = [];
+			var i = 1,
+				j = 1,
+				m = 8, //左侧选项卡数量+1
+				n = 6; //每个选项卡列表数量+1
+			//			for(; i < m; i++) {
+			//				html.push('<a class="mui-control-item" data-index="' + (i - 1) + '" href="#content' + i + '">特色推荐' + i + '</a>');
+			//			}
+			html.push(
+				'<a class="mui-control-item" data-index="' + (0) + '" href="#content' + 1 + '">特色推荐</a>' +
+				'<a class="mui-control-item" data-index="' + (1) + '" href="#content' + 2 + '">限时促销</a>' +
+				'<a class="mui-control-item" data-index="' + (2) + '" href="#content' + 3 + '">餐前小吃</a>' +
+				'<a class="mui-control-item" data-index="' + (3) + '" href="#content' + 4 + '">冷菜</a>' +
+				'<a class="mui-control-item" data-index="' + (4) + '" href="#content' + 5 + '">热菜</a>' +
+				'<a class="mui-control-item" data-index="' + (5) + '" href="#content' + 6 + '">主食</a>' +
+				'<a class="mui-control-item" data-index="' + (6) + '" href="#content' + 7 + '">酒水</a>'
+			);
+			controls.innerHTML = html.join('');
+			html = [];
+			//			for(i = 1; i < m; i++) {
+			html.push('<div id="content' + i + '" class="mui-control-content"><ul class="mui-table-view"><li></li>');
+			for(j = 1; j < n; j++) {
+				html.push('<li class="mui-table-view-cell">' + '<img  id="./detail.html"  src="http://testcookingstc.payweipan.com/img/mobile/food_01.png" alt="" />' +
+					'<div>' +
+					'<div>' + '风味扇贝' + i + j + '</div>' +
+					'<div class="taste">' + '￥36.00' +
+					'</div>' +
+					'<div class="cost">' + '库存126' + '<img class="back food_num" src="../img/back.png" />' + '<span class="change food_num">更改</span>' +
+					'</div>' +
+					'</div>' + '</li>');
+			}
+			html.push('</ul></div>');
+			//			}
+			contents.innerHTML = html.join('');
+			//默认选中第一个
+			controls.querySelector('.mui-control-item').classList.add('mui-active');
+			//			contents.querySelector('.mui-control-content').classList.add('mui-active');
+			(function() {
+				var controlsElem = document.getElementById("segmentedControls");
+				var contentsElem = document.getElementById("segmentedControlContents");
+				var controlListElem = controlsElem.querySelectorAll('.mui-control-item');
+				var contentListElem = contentsElem.querySelectorAll('.mui-control-content');
+				var controlWrapperElem = controlsElem.parentNode;
+				var controlWrapperHeight = controlWrapperElem.offsetHeight;
+				var controlMaxScroll = controlWrapperElem.scrollHeight - controlWrapperHeight; //左侧类别最大可滚动高度
+				var maxScroll = contentsElem.scrollHeight - contentsElem.offsetHeight; //右侧内容最大可滚动高度
+				var controlHeight = controlListElem[0].offsetHeight; //左侧类别每一项的高度
+				var controlTops = []; //存储control的scrollTop值
+				var contentTops = [0]; //存储content的scrollTop值
+				var length = contentListElem.length;
+				for(var i = 0; i < length; i++) {
+					controlTops.push(controlListElem[i].offsetTop + controlHeight);
+				}
+				for(var i = 1; i < length; i++) {
+					var offsetTop = contentListElem[i].offsetTop;
+					if(offsetTop + 100 >= maxScroll) {
+						var height = Math.max(offsetTop + 100 - maxScroll, 100);
+						var totalHeight = 0;
+						var heights = [];
+						for(var j = i; j < length; j++) {
+							var offsetHeight = contentListElem[j].offsetHeight;
+							totalHeight += offsetHeight;
+							heights.push(totalHeight);
+						}
+						for(var m = 0, len = heights.length; m < len; m++) {
+							contentTops.push(parseInt(maxScroll - (height - heights[m] / totalHeight * height)));
+						}
+						break;
+					} else {
+						contentTops.push(parseInt(offsetTop));
+					}
+				}
+				contentsElem.addEventListener('scroll', function() {
+					var scrollTop = contentsElem.scrollTop;
+					for(var i = 0; i < length; i++) {
+						var offsetTop = contentTops[i];
+						var offset = Math.abs(offsetTop - scrollTop);
+						//						console.log("i:"+i+",scrollTop:"+scrollTop+",offsetTop:"+offsetTop+",offset:"+offset);
+						if(scrollTop < offsetTop) {
+							if(scrollTop >= maxScroll) {
+								onScroll(length - 1);
+							} else {
+								onScroll(i - 1);
+							}
+							break;
+						} else if(offset < 20) {
+							onScroll(i);
+							break;
+						} else if(scrollTop >= maxScroll) {
+							onScroll(length - 1);
+							break;
+						}
+					}
+				});
+				var lastIndex = 0;
+				//监听content滚动
+				var onScroll = function(index) {
+					if(lastIndex !== index) {
+						lastIndex = index;
+						var lastActiveElem = controlsElem.querySelector('.mui-active');
+						lastActiveElem && (lastActiveElem.classList.remove('mui-active'));
+						var currentElem = controlsElem.querySelector('.mui-control-item:nth-child(' + (index + 1) + ')');
+						currentElem.classList.add('mui-active');
+						//简单处理左侧分类滚动，要么滚动到底，要么滚动到顶
+						var controlScrollTop = controlWrapperElem.scrollTop;
+						if(controlScrollTop + controlWrapperHeight < controlTops[index]) {
+							controlWrapperElem.scrollTop = controlMaxScroll;
+						} else if(controlScrollTop > controlTops[index] - controlHeight) {
+							controlWrapperElem.scrollTop = 0;
+						}
+					}
+				};
+				//滚动到指定content
+				var scrollTo = function(index) {
+					contentsElem.scrollTop = contentTops[index];
+				};
+				mui(controlsElem).on('tap', '.mui-control-item', function(e) {
+					scrollTo(this.getAttribute('data-index'));
+					return false;
+				});
+			})();
+			var num = $('#num_of_food').text();
+
+			function showCar() {
+				$('.foot_comm').css('background', '#F5594B');
+				$('.foot_comm').css('color', '#fff');
+				$('.foot_comm').removeAttr('disabled');
+
+				$('.food_mid p').hide().siblings().show();
+				$('.car').css('background', '#FEEBE9');
+				$('.food_com img').attr('src', 'http://testcookingstc.payweipan.com/img/mobile/car.png');
+				$('.car p').show();
+			}
+
+			function hideCar() {
+				$('.car p').hide();
+				$('.food_mid p').show().siblings().hide()
+				$('.foot_comm').css('background', '#E1E1E1');
+				$('.food_com img').attr('src', 'http://testcookingstc.payweipan.com/img/mobile/car_off.png');
+				$('.foot_comm').css('color', '#333');
+				$('.foot_comm').attr('disabled');
+			}
+
+			$('.numberbox p:nth-child(1)').click(function(e) {
+				var def = $(this).next().text();
+				num = num - 1
+				$('#num_of_food').html(num)
+				if(def < 1) {
+					$(this).next().html('0');
+					//					$('.car p').hide();
+				} else if(def == 1) {
+					$(this).hide();
+					$(this).next().html('0');
+					$(this).next().hide();
+					hideCar();
+				} else {
+					$(this).next().html(+def - 1);
+				}
+			})
+
+			$('.numberbox p:nth-child(3)').click(function() {
+				showCar();
+				num = +num + 1;
+				$('#num_of_food').html(num);
+				$(this).prev().prev().show();
+				$(this).prev().show();
+				var def = $(this).prev().text();
+				if(def == 0) {
+
+				}
+				$(this).prev().html(+def + 1);
+
+				//判断规格
+				if($(this).parent().parent().prev().prev().prev().children().css("display") === 'block') {
+					$('.alert_box').show();
+					$('.modal').show();
+					$('.modal').css('opacity', '.5');
+				}
+			})
+
+			function closeBox(el) {
+				$('.alert_box').hide();
+				$('.modal').hide();
+				$('.modal').css('opacity', '1');
+			}
+			$('.alert_con div span').click(function() {
+				$(this).css('background', '#FF5242').siblings().css('background', '#fff');
+				$(this).css('color', '#fff').siblings().css('color', '#9B9B9B');
+			})
+
+			mui('#segmentedControls').on('tap', '.mui-control-item', function() {
+				$('.mui-control-item').removeClass('mui-active')
+				$(this).addClass('mui-active');
+			})
+			$('.food_num').click(function() {
+				turn('./stored.html')
+			})
+
+			function turn(el) {
+				window.location.href = el;
+			}
+		</script>
+
+	</body>
+
+</html>

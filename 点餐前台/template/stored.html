@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style>
+		.login_name {
+			margin-top: 20px;
+			height: 40px;
+			line-height: 40px;
+			background: #fff;
+			overflow: hidden;
+		}
+		
+		.auto {
+			margin-left: 10px;
+			float: left;
+		}
+		
+		.mui-switch {
+			margin-top: 5px;
+			margin-right: 10px;
+			float: right;
+		}
+		
+		.detail {
+			margin: 10px;
+		}
+		
+		.others {
+			margin-bottom: 10px;
+			overflow: hidden;
+			background: #fff;
+		}
+		
+		.limit_l {
+			float: left;
+			margin-top: 12px;
+			margin-left: 10px;
+		}
+		
+		.limit_r {
+			font-size: 15px;
+			color: #888;
+			width: auto;
+			float: right;
+			margin: 0 0 0 0;
+			padding: 10px 12px;
+		}
+		
+		.back {
+			width: 7px;
+			margin-top: 15px;
+			margin-right: 10px;
+			float: right;
+		}
+		
+		.mui-input-group:after,
+		.mui-input-group:before,
+		.mui-input-group .mui-input-row:after {
+			height: 0;
+		}
+		
+		.mui-input-row label {
+			padding: 11px 10px;
+		}
+		
+		.save {
+			width: 90%;
+			margin-left: 5%;
+			border: 0;
+			color: #fff;
+			background: #E1E1E1;
+			border-radius: 5px;
+			margin-top: 50px;
+			padding: 10px 0;
+		}
+		
+		.active {
+			background: #FF5242;
+		}
+		
+		section {
+			display: none;
+		}
+	</style>
+
+	<body>
+		<div class="mui-content">
+			<div class="login_name">
+				<div class="auto">是否开启库存限制</div>
+				<!--↓mui-active 为开-->
+				<div class="mui-switch mui-switch-mini">
+					<div class="mui-switch-handle"></div>
+				</div>
+			</div>
+			<p class="detail">
+				关闭库存限制，表示不对库存限制。开启库存限制后，该商品 库存将被限制，请选择限制方式，并填写相应的限制数量。
+			</p>
+
+		</div>
+		<section>
+			<div class="others">
+				<div class="limit_l">
+					限制方式
+				</div>
+				<img src="../img/back.png" class="back" alt="" />
+				<select class="mui-btn limit_r mui-btn-block">
+					<option value="0">请选择限制方式</option>
+					<option value="1">总库存限制</option>
+					<option value="2">每天限制</option>
+					<option value="3">每周限制</option>
+					<option value="4">每月限制</option>
+				</select>
+
+			</div>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>限制数量</label>
+					<input type="tel" maxlength="11" id="number" class="mui-input-clear" placeholder="请输入菜品库存限制数量">
+				</div>
+			</form>
+			<button type="button" class="save" class="mui-btn">保存</button>
+		</section>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jq.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			$('.mui-switch').click(function() {
+				if($(this).hasClass('mui-active')) {
+					$('section').show();
+				} else {
+					$('section').hide();
+				}
+			})
+
+			function judge() {
+				if($('.limit_r').val() != '0' && $('#number').val() != '') {
+					$('.save').addClass('active');
+				} else {
+					$('.save').removeClass('active');
+				}
+
+			}
+			$('.active').live('click', function() {
+				mui.toast('库存更改成功！');
+				setTimeout("turn('./food_num.html')", 1000)
+
+			})
+			$('.limit_r').change(function() {
+				judge();
+			})
+			$('#number').keyup(function() {
+				judge();
+			})
+
+			function turn(el) {
+				window.location.href = el;
+			}
+		</script>
+	</body>
+
+</html>

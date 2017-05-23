@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style>
+		.login_name {
+			margin-top: 20px;
+			height: 40px;
+			line-height: 40px;
+			background: #fff;
+			overflow: hidden;
+		}
+		
+		.auto {
+			margin-left: 10px;
+			float: left;
+		}
+		
+		.mui-switch {
+			margin-top: 5px;
+			margin-right: 10px;
+			float: right;
+		}
+		.detail{
+			margin: 10px;
+		}
+	</style>
+
+	<body>
+		<div class="mui-content">
+			<div class="login_name">
+				<div class="auto">新订单自动接单</div>
+				<!--↓mui-active 为开-->
+				<div class="mui-switch mui-switch-mini">
+					<div class="mui-switch-handle"></div>
+				</div>
+			</div>
+			<p class="detail">
+				开启新订单自动接单后，系统自动确认顾客所点的订单并完成后厨小票打印。由于无需确认订单，可能会遇到顾客恶意刷单 的情况，请谨慎选择。
+			</p>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/nav_tab.css" />
+	</head>
+	<style>
+
+	</style>
+
+	<body>
+		<nav class="nav">
+			<div class="nav_list" id="index.html" onclick="turn(this.id)">
+				<span class="home_bg"></span>
+				<span class="">收银主页</span>
+			</div>
+			<div class="nav_list" id="info.html" onclick="turn(this.id)">
+				<span class="info_bg"></span>
+				<span class="">通知消息</span>
+				<span class="info_num">26</span>
+			</div>
+			<div class="nav_list active" id="static.html">
+				<span class="static_bg"></span>
+				<span class="">账单统计</span>
+			</div>
+
+			<div class="nav_list" id="setting.html" onclick="turn(this.id)">
+				<span class="set_bg"></span>
+				<span class="">个人中心</span>
+			</div>
+		</nav>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jq.js"></script>
+		<script type="text/javascript">
+			mui.init()
+
+			function turn(el) {
+				window.location.href = el;
+			}
+			$('.nav_list').click(function() {
+				$('.nav_list').removeClass('active');
+				$(this).addClass('active');
+			})
+		</script>
+	</body>
+
+</html>

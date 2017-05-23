@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style>
+		.mui-input-group:after,
+		.mui-input-group:before,
+		.mui-input-group .mui-input-row:after {
+			height: 0;
+		}
+		/*.mui-input-row label{
+			width: 30% !important;
+		}
+		.mui-input-clear{
+			width: 75% !important;
+		}*/
+		
+		.mui-content {
+			margin: 20px 0 40px 0;
+		}
+		
+		.save {
+			width: 90%;
+			margin-left: 5%;
+			border: 0;
+			color: #fff;
+			background: #E1E1E1;
+			border-radius: 5px;
+			margin-top: 50px;
+			padding: 10px 0;
+		}
+		.active{
+			background: #FF5242;
+		}
+	</style>
+
+	<body>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>手机号码</label>
+					<input type="tel" maxlength="11" id="number" class="mui-input-clear" placeholder="请输入您的新手机号码">
+				</div>
+			</form>
+			<button type="button" class="save" class="mui-btn">保存</button>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jq.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			//			$("#number").keyup(function() {
+			//				if(this.value.length > 10) {
+			//					$(this).val(doFilter(this.value));
+			//				}
+			//			});
+			//
+			//			function doFilter(value) {
+			//				var temp = [];
+			//				temp[0] = value.slice(0, 3);
+			//				temp[1] = value.slice(3, 7);
+			//				temp[2] = value.slice(7);
+			//				return temp.join(" ");
+			//			}
+			$('#number').keyup(function() {
+				if(this.value.length > 10) {
+					$('.save').addClass('active')
+				}else{
+					$('.save').removeClass('active')
+				}
+			})
+			$('.active').live('click',function(){
+				turn('./personal_data.html')
+			})
+			function turn(el){
+				window.location.href=el
+			}
+		</script>
+	</body>
+
+</html>

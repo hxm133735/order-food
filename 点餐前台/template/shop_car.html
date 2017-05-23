@@ -1,0 +1,275 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="http://testcookingstc.payweipan.com/css/mobile/mui.min.css" rel="stylesheet" />
+		<link href="http://testcookingstc.payweipan.com/css/mobile/shop_car.css" rel="stylesheet" />
+	</head>
+	<style>
+		.mui-table-view-cell:after {
+			height: 0;
+		}
+		
+		#note {
+			padding: 10px 0px;
+			width: 75%;
+			border: 0;
+			font-size: 12px;
+		}
+	</style>
+
+	<body>
+		<div class="mui-content">
+			<div class="head">
+				<div class="head_top">
+					<div>用餐人数：<span id="people_num">4</span>人</div>
+					<div class="change" id="./change.html" onclick="clicked(this.id)"><span>修改</span><img src="http://testcookingstc.payweipan.com/img/mobile/to.png" alt="" /></div>
+				</div>
+				<div class="head_foot mui-input-row">
+					订单备注：
+					<input type="text" id="note" placeholder="请在此输入备注信息,例如不要辣等">
+				</div>
+
+			</div>
+			<div class="special">
+				<div class="always_eat">
+					<span class="eat_in">
+						本店特色
+					</span>
+				</div>
+				<div class="foods mui-table-view-cell mui-text-center">
+					<div class="mui-slider-handle">
+						<div class="foods_left">
+							<img src="http://testcookingstc.payweipan.com/img/mobile/foods_01.png" alt="" />
+							<p class="">顾客A</p>
+						</div>
+						<div class="foods_right mui-text-left">
+							<div>菠萝牛柳饭</div>
+							<p>精选台湾新鲜菠萝+墨西哥牛柳精准而成。</p>
+							<div>￥36.00
+								<div class="numberbox">
+									<p></p>
+									<p>1</p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+				</div>
+				<div class="foods mui-table-view-cell mui-text-center">
+					<div class="mui-slider-handle">
+						<div class="foods_left">
+							<img src="http://testcookingstc.payweipan.com/img/mobile/foods_02.png" alt="" />
+							<p class="">顾客B</p>
+						</div>
+						<div class="foods_right mui-text-left">
+							<div>铁板鱿鱼仔</div>
+							<p>精选舟山优质水域新鲜鱿鱼仔烹饪而成。口感Q弹顺滑，营养价 值高，必点精品。</p>
+							<div>￥42.00
+								<div class="numberbox">
+									<p></p>
+									<p>1</p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+				</div>
+				<div class="foods mui-table-view-cell mui-text-center">
+					<div class="mui-slider-handle">
+						<div class="foods_left">
+							<img src="http://testcookingstc.payweipan.com/img/mobile/foods_02.png" alt="" />
+							<p class="">顾客B</p>
+						</div>
+						<div class="foods_right mui-text-left">
+							<div>海鲜麻辣香锅</div>
+							<p></p>
+							<div>￥79.00
+								<div class="numberbox">
+									<p></p>
+									<p>1</p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+				</div>
+			</div>
+			<div class="special">
+				<div class="always_eat">
+					<span class="eat_in">
+						餐前甜点
+					</span>
+				</div>
+
+				<div class="foods mui-table-view-cell mui-text-center">
+					<div class="mui-slider-handle">
+						<div class="foods_left">
+							<img src="http://testcookingstc.payweipan.com/img/mobile/foods_01.png" alt="" />
+							<p class="">顾客A</p>
+						</div>
+						<div class="foods_right mui-text-left">
+							<div>香草巧克力慕斯</div>
+							<p>精选台湾新鲜菠萝+墨西哥牛柳精准而成。</p>
+							<div>￥16.00
+								<div class="numberbox">
+									<p></p>
+									<p>1</p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+				</div>
+				<div class="foods mui-table-view-cell mui-text-center">
+					<div class="mui-slider-handle">
+						<div class="foods_left">
+							<img src="http://testcookingstc.payweipan.com/img/mobile/foods_01.png" alt="" />
+							<p class="">顾客B</p>
+						</div>
+						<div class="foods_right mui-text-left">
+							<div>水果拼盘</div>
+							<p>精选舟山优质水域新鲜鱿鱼仔烹饪而成。口感Q弹顺滑，营养价 值高，必点精品。</p>
+							<div>￥42.00
+								<div class="numberbox">
+									<p></p>
+									<p>1</p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red">删除</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="foot_left">
+				<div class="num">商品数量：<span id="total_num">8</span></div>
+				<div class="total">合计：</div>
+				<div>￥<span id="total_food">384.00</span></div>
+			</div>
+			<div class="foot_right" id="./already.html" onclick="clicked(this.id)">立即下单</div>
+		</div>
+		<script src="http://testcookingstc.payweipan.com/js/mobile/mui.min.js"></script>
+		<script src="http://testcookingstc.payweipan.com/js/mobile/common.js"></script>
+		<script src="http://testcookingstc.payweipan.com/js/mobile/jq.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			//字体自适应
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '24px';
+						} else {
+							docEl.style.fontSize = 24 * (clientWidth / 640) + 'px';
+						}
+					};
+
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+			(function($) {
+				//$.swipeoutOpen(el,direction)//打开指定列的滑动菜单，el:指定列的dom对象，direction：取值left|right，指定打开的是左侧或右侧滑动菜单
+				//$.swipeoutClose(el);//关闭指定列的滑动菜单，el:指定列的dom对象
+				//				setTimeout(function() {
+				//					$.swipeoutOpen(document.getElementById("OA_task_1").querySelector('li:last-child'), 'left');
+				//					setTimeout(function() {
+				//						$.swipeoutClose(document.getElementById("OA_task_1").querySelector('li:last-child'));
+				//					}, 1000);
+				//				}, 1000);
+				//第一个demo，拖拽后显示操作图标，点击操作图标删除元素；
+				$('.special').on('tap', '.mui-btn', function(event) {
+					var elem = this;
+					var li = elem.parentNode.parentNode;
+					mui.confirm('确认删除该道菜？', '提示', btnArray, function(e) {
+						if(e.index == 0) {
+							li.parentNode.removeChild(li);
+						} else {
+							setTimeout(function() {
+								$.swipeoutClose(li);
+							}, 0);
+						}
+					});
+				});
+				var btnArray = ['确认', '取消'];
+				//第二个demo，向左拖拽后显示操作图标，释放后自动触发的业务逻辑
+				//				$('#OA_task_2').on('slideleft', '.mui-table-view-cell', function(event) {
+				//					var elem = this;
+				//					mui.confirm('确认删除该条记录？', 'Hello MUI', btnArray, function(e) {
+				//						if(e.index == 0) {
+				//							elem.parentNode.removeChild(elem);
+				//						} else {
+				//							setTimeout(function() {
+				//								$.swipeoutClose(elem);
+				//							}, 0);
+				//						}
+				//					});
+				//				});
+				//				//第二个demo，向右拖拽后显示操作图标，释放后自动触发的业务逻辑
+				//				$('#OA_task_2').on('slideright', '.mui-table-view-cell', function(event) {
+				//					var elem = this;
+				//					mui.confirm('确认删除该条记录？', 'Hello MUI', btnArray, function(e) {
+				//						if(e.index == 0) {
+				//							elem.parentNode.removeChild(elem);
+				//						} else {
+				//							setTimeout(function() {
+				//								$.swipeoutClose(elem);
+				//							}, 0);
+				//						}
+				//					});
+				//				});
+			})(mui);
+			$('.imgs').click(function() {
+				mui.openWindow({
+					url: './detail.html',
+					id: 'detail'
+				})
+			})
+			$('.numberbox p:nth-child(1)').click(function() {
+				var def = $(this).next().text();
+				if(def < 1) {
+					$(this).next().html('0');
+				} else if(def == 1) {
+					$(this).hide();
+					$(this).next().html('0');
+					$(this).next().hide();
+				} else {
+					$(this).next().html(parseInt(def) - 1);
+				}
+			})
+			$('.numberbox p:nth-child(3)').click(function() {
+				$(this).prev().prev().show();
+				$(this).prev().show();
+				var def = $(this).prev().text();
+				if(def == 0) {
+
+				}
+				$(this).prev().html(parseInt(def) + 1);
+			})
+		</script>
+	</body>
+
+</html>

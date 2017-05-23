@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/nav_tab.css" />
+	</head>
+	<style>
+		li {
+			list-style: none;
+		}
+		
+		.tab_top {
+			margin: 20px;
+			height: 28px;
+			line-height: 28px;
+			font-size: 12px;
+			border: 1px solid #FF5242;
+			border-radius: 5px;
+			text-align: center;
+			width: 80%;
+			margin-left: 10%;
+			overflow: hidden;
+		}
+		
+		.tab_top div {
+			color: #FF5242;
+			background: #fff;
+			/*			border-radius: 5px;
+*/
+			/*border: 1px solid #FF5242;*/
+			width: 50%;
+			float: left;
+		}
+		
+		.tab_top .active {
+			background: #FF5242;
+			color: #fff;
+		}
+		
+		.wait {
+			color: #888;
+			font-size: 12px;
+			position: absolute;
+			right: 40px;
+			top: 20px;
+		}
+		.history{
+			display: none;
+		}
+		.accept{
+			color: #71cb3f;
+		}
+		.mui-content{
+			margin-bottom: 50px;
+		}
+	</style>
+
+	<body>
+		<div class="mui-content">
+			<div class="tab_top">
+				<div class="active">新消息</div>
+				<div class="">历史消息</div>
+			</div>
+			<ul class="mui-table-view new">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<div class="titles">大厅A409 扫码点餐新订单</div>
+						<p>2017/05/21 12:56:32</p>
+						<span class="wait">去处理</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<div class="titles">包厢C001 扫码点餐加菜订单</div>
+						<p>2017/05/21 12:56:32</p>
+						<span class="wait">去处理</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<div class="titles">包厢C001 扫码点餐加菜订单</div>
+						<p>2017/05/21 12:56:32</p>
+						<span class="wait">去处理</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<div class="titles">包厢C001 扫码点餐加菜订单</div>
+						<p>2017/05/21 12:56:32</p>
+						<span class="wait">去处理</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<div class="titles">包厢C001 扫码点餐加菜订单</div>
+						<p>2017/05/21 12:56:32</p>
+						<span class="wait">去处理</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<div class="titles">包厢C001 扫码点餐加菜订单</div>
+						<p>2017/05/21 12:56:32</p>
+						<span class="wait">去处理</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<div class="titles">包厢C001 扫码点餐加菜订单</div>
+						<p>2017/05/21 12:56:32</p>
+						<span class="wait">去处理</span>
+					</a>
+				</li>
+				
+
+			</ul>
+			<ul class="mui-table-view history">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<div class="titles">大厅A409 扫码点餐新订单</div>
+						<p>2017/05/21 12:56:32</p>
+						<span class="wait accept">已接单</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<div class="titles">包厢C001 扫码点餐加菜订单</div>
+						<p>2017/05/21 12:56:32</p>
+						<span class="wait">已拒绝</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<div class="titles">包厢C001 扫码点餐加菜订单</div>
+						<p>2017/05/21 12:56:32</p>
+						<span class="wait accept">已接单</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<div class="titles">包厢C001 扫码点餐加菜订单</div>
+						<p>2017/05/21 12:56:32</p>
+						<span class="wait accept">已接单</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<div class="titles">包厢C001 扫码点餐加菜订单</div>
+						<p>2017/05/21 12:56:32</p>
+						<span class="wait accept">已接单</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<div class="titles">包厢C001 扫码点餐加菜订单</div>
+						<p>2017/05/21 12:56:32</p>
+						<span class="wait accept">已接单</span>
+					</a>
+				</li>
+
+			</ul>
+		</div>
+		<nav class="nav">
+			<div class="nav_list" id="index.html" onclick="turn(this.id)">
+				<span class="home_bg"></span>
+				<span class="">收银主页</span>
+			</div>
+			<div class="nav_list active" id="info.html">
+				<span class="info_bg"></span>
+				<span class="">通知消息</span>
+				<span class="info_num">26</span>
+			</div>
+			<div class="nav_list" id="static.html" onclick="turn(this.id)">
+				<span class="static_bg"></span>
+				<span class="">账单统计</span>
+			</div>
+
+			<div class="nav_list" id="setting.html" onclick="turn(this.id)">
+				<span class="set_bg"></span>
+				<span class="">个人中心</span>
+			</div>
+		</nav>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jq.js"></script>
+		<script type="text/javascript">
+			mui.init()
+
+			function turn(el) {
+				window.location.href = el;
+			}
+			$('.nav_list').click(function() {
+				$('.nav_list').removeClass('active');
+				$(this).addClass('active');
+			})
+			$('.tab_top div').click(function() {
+				$('.tab_top div').removeClass('active');
+				$(this).addClass('active');
+				$('ul').hide();
+				if(this.innerText == '新消息') {
+					$('.new').show();
+				} else {
+					$('.history').show();
+				}
+			})
+			function turn(el) {
+				window.location.href = el;
+			}
+			$('.new li').click(function(){
+				turn('template/waiting.html')
+			})
+			$('.history li').click(function(){
+				if($(this).children('a').children('.wait').text()=='已拒绝'){
+					turn('template/refuze.html')
+				}else{
+					turn()
+				}
+			})
+		</script>
+	</body>
+
+</html>

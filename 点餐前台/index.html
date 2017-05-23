@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/nav_tab.css"/>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+		<!--<script src="../js/common.js"></script>
+		<script src="../js/immersed.js"></script>-->
+	</head>
+	<style>
+		html,
+		body {
+			/*background: #f3f4f5;*/
+			font-size: 12px;
+		}
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			width: 100%;
+			/*height: 100%;*/
+		}
+			
+		#sliderSegmentedControl {
+			background: #fff;
+		}
+		
+		.mui-content {
+			
+		}
+		
+		li {
+			list-style: none;
+		}
+		.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+			border-bottom: 0;
+		}
+		.con{
+			margin: 20px 0;
+		}
+		.list{
+			margin-top: 10px;
+		}
+		.list li{
+			margin-left: 2.5%;
+			background: #fff;
+			width: 30%;
+			float: left;
+		}
+		.list li img{
+			margin-top: 15px;
+			width: 45%;
+		}
+		.list li .section{
+			margin-left: 5%;
+			padding-bottom: 15px;
+			margin-bottom: 5px;
+			width: 90%;
+			border-bottom: 1px solid #E6E6E6;
+		}
+		.num{
+			margin-left: 10px;
+			font-size: 16px;
+			text-align: left;
+		}
+		.empty{
+			margin-left: 10px !important;
+			text-align: left;
+		}
+		/*nav*/
+		.info_num{
+			border: 1px solid #fff;
+			font-size: 10px !important;
+			color: #fff !important;
+			padding: 0px 3px;			
+			height: 16px;
+			line-height: 16px;
+			background: #FF5242;
+			position: absolute;
+			top: 0px;
+			left: 38%;
+			border-radius: 40%;
+		}
+		
+		/*nav end*/
+		
+	</style>
+ 
+	<body>
+		<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+			<div class="mui-scroll">
+				<a class="mui-control-item mui-active" href="#item1mobile">
+					全部桌位
+				</a>
+				<a class="mui-control-item" href="#item2mobile">
+					空桌
+				</a>
+				<a class="mui-control-item" href="#item3mobile">
+					用餐中
+				</a>
+				<a class="mui-control-item" href="#item4mobile">
+					大厅A区
+				</a>
+				<a class="mui-control-item" href="#item5mobile">
+					包厢
+				</a>
+			</div>
+		</div>
+		<div class="mui-content">
+			<div class="con">
+				<ul class="list mui-clearfix mui-text-center">
+					<li class="empty_section">
+						<img src="img/not_eating.png" alt="" />
+						<p class="section">6人大厅A区</p>
+						<div class="num">A326</div>
+						<p class="empty">空桌</p>
+					</li>
+					<li class="full">
+						<img src="img/eating.png" alt="" />
+						<p class="section">5人用餐中</p>
+						<div class="num">C508</div>
+						<p class="empty">已开单60分钟</p>
+					</li>
+					<li class="full">
+						<img src="img/eating.png" alt="" />
+						<p class="section">2人用餐中</p>
+						<div class="num">B206</div>
+						<p class="empty">已开单12分钟</p>
+					</li>
+				</ul>
+				<ul class="list mui-clearfix mui-text-center">
+					<li class="empty_section">
+						<img src="img/not_eating.png" alt="" />
+						<p class="section">6人大厅A区</p>
+						<div class="num">A326</div>
+						<p class="empty">空桌</p>
+					</li>
+					<li class="empty_section">
+						<img src="img/not_eating.png" alt="" />
+						<p class="section">6人大厅A区</p>
+						<div class="num">A326</div>
+						<p class="empty">空桌</p>
+					</li>
+					<li class="empty_section">
+						<img src="img/not_eating.png" alt="" />
+						<p class="section">6人大厅A区</p>
+						<div class="num">A326</div>
+						<p class="empty">空桌</p>
+					</li>
+				</ul>
+				<ul class="list mui-clearfix mui-text-center">
+					<li class="empty_section">
+						<img src="img/not_eating.png" alt="" />
+						<p class="section">6人大厅A区</p>
+						<div class="num">A326</div>
+						<p class="empty">空桌</p>
+					</li>
+					<li class="empty_section">
+						<img src="img/not_eating.png" alt="" />
+						<p class="section">6人大厅A区</p>
+						<div class="num">A326</div>
+						<p class="empty">空桌</p>
+					</li>
+					<li class="empty_section">
+						<img src="img/not_eating.png" alt="" />
+						<p class="section">6人大厅A区</p>
+						<div class="num">A326</div>
+						<p class="empty">空桌</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<nav class="nav">
+			<div class="nav_list active" id="index.html">
+				<span class="home_bg"></span>
+				<span class="">收银主页</span>
+			</div>
+			<div class="nav_list" id="info.html" onclick="turn(this.id)">
+				<span class="info_bg"></span>
+				<span class="">通知消息</span>
+				<span class="info_num">26</span>
+			</div>
+			<div class="nav_list" id="static.html" onclick="turn(this.id)">
+				<span class="static_bg"></span>
+				<span class="">账单统计</span>
+			</div>
+
+			<div class="nav_list" id="setting.html" onclick="turn(this.id)">
+				<span class="set_bg"></span>
+				<span class="">个人中心</span>
+			</div>
+		</nav>
+
+	</body>
+	<script src="js/jq.js"></script>
+	<script>
+
+
+		//mui初始化
+		mui.init();
+
+		$('.empty_section').click(function(){
+			window.location.href='./template/open-order.html'
+		}) 
+		$('.full').click(function(){
+			window.location.href='./template/food.html'
+		})
+		function turn(el){
+			window.location.href=el;
+		}
+		$('.nav_list').click(function(){
+			$('.nav_list').removeClass('active');
+			$(this).addClass('active');
+		})
+	</script>
+
+</html>

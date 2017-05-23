@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>已下单的菜</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="http://testcookingstc.payweipan.com/css/mobile/mui.min.css" rel="stylesheet" />
+		<link href="http://testcookingstc.payweipan.com/css/mobile/already.css" rel="stylesheet" />
+	</head>
+	<style>
+		p {
+			color: #888;
+		}
+		
+		body {
+			position: relative;
+		}
+		
+		#pay_online {
+			background: #FF5242;
+			color: #fff;
+		}
+		
+		.head_foot {
+			margin: 0 0 10px 0;
+		}
+		
+		.inner_top p {
+			color: #333 !important;
+		}
+		
+		.con_detail p:nth-child(4) {
+			margin-right: 10px;
+			font-size: 12px;
+			float: right;
+			color: #888;
+		}
+		
+		.pay_prev {
+			background: #FF5242;
+			color: #fff;
+		}
+		
+		.modal {
+			position: fixed;
+		}
+		
+		.mid_head .edit {
+			float: right;
+		}
+		
+		.mid_head .edit button {
+			margin-top: 20px;
+			padding: 3px 7px;
+			font-size: 12px;
+		}
+		
+		.con_detail p:nth-child(3) {
+			color: #888;
+			margin-left: 2.5rem;
+			font-size: 1rem;
+			float: left;
+		}
+		
+		.continue {
+			color: #333;
+		}
+		
+		.alert_box {
+			display: block;
+		}
+		
+		.mui-popup-button {
+			color: #333;
+		}
+		
+		.mui-popup-button-bold {
+			color: #ff5242;
+		}
+		
+		.cancel_food {
+			display: none;
+		}
+	</style>
+
+	<body>
+
+		<div class="head_foot">
+			<div class="foot_inner">
+				<div class="inner_top">
+					<p>用餐人数：<span>6</span>人</p>
+					<p>桌位号码：<span>A53</span></p>
+				</div>
+				<div class="inner_mid">
+					<p>下单时间：<span>2017/05/10 12:56:43</span></p>
+				</div>
+				<div class="inner_foot">
+					<p>订单编号：<span>A467863882737000978</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="mui-content">
+			<div class="mid">
+				<div class="mid_head">
+					<img src="http://testcookingstc.payweipan.com/img/mobile/foods_02.png" alt="" />
+					<div class="head_r">
+						<h4>顾客A</h4>
+						<p>点菜数：<span>3</span>份</p>
+					</div>
+				</div>
+				<div class="mid_con">
+					<div>
+						菠萝牛柳饭
+					</div>
+					<div class="con_detail">
+						<p>￥36.00</p>
+						<p>规格：大份</p>
+						<p>数量: 1份</p>
+						<p>已拒绝</p>
+					</div>
+				</div>
+				<div class="mid_con">
+					<div>
+						铁板鱿鱼仔
+					</div>
+					<div class="con_detail">
+						<p>￥42.00</p>
+						<p>数量: 1份</p>
+						<p></p>
+						<p>已拒绝</p>
+					</div>
+				</div>
+				<div class="mid_con">
+					<div>
+						海鲜麻辣香锅
+					</div>
+					<div class="con_detail">
+						<p>￥79.00</p>
+						<p>数量: 1份</p>
+						<p></p>
+						<p>已拒绝</p>
+					</div>
+				</div>
+				<div class="mid_con">
+					<div>
+						海鲜麻辣香锅
+					</div>
+					<div class="con_detail">
+						<p>￥79.00</p>
+						<p>数量: 1份</p>
+						<p></p>
+						<p>已拒绝</p>
+					</div>
+				</div>
+				<div class="mid_con">
+					<div>
+						海鲜麻辣香锅
+					</div>
+					<div class="con_detail">
+						<p>￥79.00</p>
+						<p>数量: 1份</p>
+						<p></p>
+						<p>已拒绝</p>
+					</div>
+				</div>
+				<div class="remark">
+					<div class="remark_pad">
+						<span>订单备注：</span>麻烦铁板鱿鱼仔微辣，海鲜麻辣香锅少放蟹 多放点儿虾，谢谢！
+					</div>
+				</div>
+				<div class="total">
+					共5件商品&nbsp;&nbsp;&nbsp;&nbsp;合计: <span>￥235.00</span>
+				</div>
+			</div>
+
+		</div>
+
+		<script src="http://testcookingstc.payweipan.com/js/mobile/mui.min.js"></script>
+		<script src="http://testcookingstc.payweipan.com/js/mobile/common.js"></script>
+		<script src="http://testcookingstc.payweipan.com/js/mobile/jq.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			//字体自适应
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '24px';
+						} else {
+							docEl.style.fontSize = 24 * (clientWidth / 640) + 'px';
+						}
+					};
+
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+			
+		</script>
+	</body>
+
+</html>

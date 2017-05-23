@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>菜单详情</title>
+		<script src="http://testcookingstc.payweipan.com/js/mobile/mui.min.js"></script>
+		<link href="http://testcookingstc.payweipan.com/css/mobile/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="http://testcookingstc.payweipan.com/css/mobile/detail.css" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+	</head>
+
+	<body>
+		<div class="alert_box">
+			<div class="mui-text-center food_title">
+				<span onclick="closeBox()" class="mui-pull-right">X</span><br /> 菠萝牛柳饭
+			</div>
+			<div class="alert_con">
+				<p>商品规格</p>
+				<div><span>大份</span><span>小份</span></div>
+				<div class="alert_foot">
+					<p>￥48.00</p>
+					<p onclick="closeBox()">选好了</p>
+				</div>
+			</div>
+		</div>
+		<div class="mui-content">
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="http://testcookingstc.payweipan.com/img/mobile/pic_01.jpg">
+						</a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="http://testcookingstc.payweipan.com/img/mobile/pic_01.jpg">
+						</a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="http://testcookingstc.payweipan.com/img/mobile/pic_01.jpg">
+						</a>
+					</div>
+					<!-- 第三张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="http://testcookingstc.payweipan.com/img/mobile/pic_01.jpg">
+						</a>
+					</div>
+					<!-- 第四张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="http://testcookingstc.payweipan.com/img/mobile/pic_01.jpg">
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="http://testcookingstc.payweipan.com/img/mobile/pic_01.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+
+			<div class="food_con">
+				<div class="inner_food">
+					<h4>菠萝牛柳饭
+						<span class="mui-pull-right" class="size" 
+							style="border-radius: 13px;padding: 3px 7px;border: 1px solid #FBBF37;font-size: 12px;font-weight: normal;color: #FBBF37;">
+							多种规格</span>
+					</h4>
+					<p>精选台湾新鲜菠萝+墨西哥牛柳精准而成。</p>
+					<div class="food_foot">
+						<h4>￥36.00</h4>
+						<p>￥48.00</p>
+						<div class="to_car" onclick="showDetail()">加入购物车</div>
+					</div>
+				</div>
+			</div>
+			<div class="food_detail">
+				<div class="cook_top">
+					<p>不辣</p>
+					<p>本月新品</p>
+					<div id="grade">
+						<img src="http://testcookingstc.payweipan.com/img/mobile/star.png" alt="" />
+						<img src="http://testcookingstc.payweipan.com/img/mobile/star.png" alt="" />
+						<img src="http://testcookingstc.payweipan.com/img/mobile/star.png" alt="" />
+						<img src="http://testcookingstc.payweipan.com/img/mobile/star.png" alt="" />
+						<img src="http://testcookingstc.payweipan.com/img/mobile/star.png" alt="" />
+					</div>
+
+				</div>
+				<div class="cook_con">
+					<p>商品做法：手工秘制</p>
+					<p>制作耗时：约30分钟</p>
+					<div class="para">
+						<p>详述：</p>
+						<p>精选台湾新鲜菠萝半只，配合木桶烘焙米饭200g+墨西哥 进口牛柳50g精致而成，口感清新爽滑。</p>
+					</div>
+				</div>
+			</div>
+			<div class="always_eat">
+				<span class="eat_in">
+					顾客常点
+				</span>
+			</div>
+			<div class="lines">
+				<div class="line_one">
+					<img src="http://testcookingstc.payweipan.com/img/mobile/food.jpg" />
+					<div class="food_name">
+						<div class="f_name">
+							风味扇贝
+						</div>
+						<div class="food_num">
+							￥48.00
+							<div class="numberbox">
+								<p></p>
+								<p>0</p>
+								<p></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="line_two">
+					<img src="http://testcookingstc.payweipan.com/img/mobile/food.jpg" />
+					<div class="food_name">
+						<div class="f_name">
+							风味扇贝
+						</div>
+						<div class="food_num">
+							￥48.00
+							<div class="numberbox">
+								<p></p>
+								<p>0</p>
+								<p></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="lines">
+				<div class="line_one">
+					<img src="http://testcookingstc.payweipan.com/img/mobile/food.jpg" />
+					<div class="food_name">
+						<div class="f_name">
+							风味扇贝
+						</div>
+						<div class="food_num">
+							￥48.00
+							<div class="numberbox">
+								<p></p>
+								<p>0</p>
+								<p></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="line_two">
+					<img src="http://testcookingstc.payweipan.com/img/mobile/food.jpg" />
+					<div class="food_name">
+						<div class="f_name">
+							风味扇贝
+						</div>
+						<div class="food_num">
+							￥48.00
+							<div class="numberbox">
+								<p></p>
+								<p>0</p>
+								<p></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="http://testcookingstc.payweipan.com/js/mobile/jq.js">
+	</script>
+	<script>
+		//字体自适应
+		(function(doc, win) {
+			var docEl = doc.documentElement,
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+				recalc = function() {
+					var clientWidth = docEl.clientWidth;
+					if(!clientWidth) return;
+					if(clientWidth >= 640) {
+						docEl.style.fontSize = '24px';
+					} else {
+						docEl.style.fontSize = 24 * (clientWidth / 640) + 'px';
+					}
+				};
+
+			if(!doc.addEventListener) return;
+			win.addEventListener(resizeEvt, recalc, false);
+			doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+		$('.alert_con div span').click(function() {
+			$(this).css('background', '#FF5242').siblings().css('background', '#fff');
+			$(this).css('color', '#fff').siblings().css('color', '#9B9B9B');
+		})
+
+		function showDetail(el) {
+			$('body').css('background', '#000');
+			$('.mui-content').css('opacity', '.5');
+			$('.alert_box').show();
+		}
+
+		function closeBox(el) {
+			$('.alert_box').hide();
+			$('body').css('background', '#fff');
+			$('.mui-content').css('opacity', '1');
+		}
+		$('.numberbox p:nth-child(1)').click(function() {
+			var def = $(this).next().text();
+			if(def < 1) {
+				$(this).next().html('0');
+			} else if(def == 1) {
+				$(this).hide();
+				$(this).next().html('0');
+				$(this).next().hide();
+			} else {
+				$(this).next().html(parseInt(def) - 1);
+			}
+		})
+		$('.numberbox p:nth-child(3)').click(function() {
+			$(this).prev().prev().show();
+			$(this).prev().show();
+			var def = $(this).prev().text();
+			if(def == 0) {
+
+			}
+			$(this).prev().html(parseInt(def) + 1);
+		})
+	</script>
+
+</html>

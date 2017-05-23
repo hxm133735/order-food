@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/nav_tab.css" />
+	</head>
+	<style>
+		.mid_head {
+			padding: 10px 0;
+			margin-bottom: 20px;
+			cursor: pointer;
+			overflow: hidden;
+			background: #fff;
+		}
+		
+		.head {
+			margin-left: 10px;
+			padding-top: 5px;
+			display: block;
+			border-radius: 7px;
+			float: left;
+			width: 55px;
+		}
+		
+		.head_l {
+			margin-left: 10px;
+			padding-top: 10px;
+			float: left;
+		}
+		
+		.head_r {
+			padding-top: 25px;
+			margin-right: 10px;
+			width: 7px;
+			float: right;
+		}
+		
+		ul {
+			margin: 10px 0;
+		}
+		
+		.list li {
+			padding: 7px 0 0 0;
+			overflow: hidden;
+		}
+		
+		.list li .sum,
+		.list li div {
+			float: left;
+		}
+		
+		.list li .sum {
+			margin-top: 5px;
+			width: 6%;
+		}
+		
+		.sum img {
+			margin-left: 10px;
+			width: 20px;
+		}
+		
+		.list li div {
+			margin-top: 5px;
+			font-size: 14px;
+			margin-left: 4%;
+			padding-bottom: 15px;
+			width: 90%;
+		}
+		
+		.total {
+			border-bottom: 1px solid #E6E6E6;
+		}
+		
+		.list li .back {
+			margin-right: 10px;
+			margin-top: 5px;
+			width: 7px;
+			float: right;
+		}
+	</style>
+
+	<body>
+		<div class="mui-content">
+			<div class="mid_head" id="./template/personal_data.html" onclick="turn(this.id)">
+				<img src="img/head.png" class="head" alt="" />
+				<div class="head_l">
+					<div>登录帐号昵称</div>
+					<p>201700268</p>
+				</div>
+				<img src="img/back.png" class="head_r" alt="" />
+			</div>
+			<ul class="list">
+				<li id="./template/food_num.html" onclick="turn(this.id)">
+					<p class="sum"><img src="img/sum.png" /></p>
+					<div class="total">商品估清<img src="img/back.png" class="back" alt="" /></div>
+				</li>
+				<li>
+					<p class="sum"><img src="img/message.png" /></p>
+					<div class="">系统通知<img src="img/back.png" class="back" alt="" /></div>
+				</li>
+			</ul>
+			<ul class="list">
+				<li id="./template/basic_set.html" onclick="turn(this.id)">
+					<p class="sum"><img src="img/set.png" /></p>
+					<div class="">基础设置<img src="img/back.png" class="back" alt="" /></div>
+				</li>
+			</ul>
+			<ul class="list">
+				<li>
+					<p class="sum"><img src="img/logout.png" /></p>
+					<div class="">退出登录<img src="img/back.png" class="back" alt="" /></div>
+				</li>
+			</ul>
+		</div>
+		<nav class="nav">
+			<div class="nav_list" id="index.html" onclick="turn(this.id)">
+				<span class="home_bg"></span>
+				<span class="">收银主页</span>
+			</div>
+			<div class="nav_list" id="info.html" onclick="turn(this.id)">
+				<span class="info_bg"></span>
+				<span class="">通知消息</span>
+				<span class="info_num">26</span>
+			</div>
+			<div class="nav_list" id="static.html" onclick="turn(this.id)">
+				<span class="static_bg"></span>
+				<span class="">账单统计</span>
+			</div>
+
+			<div class="nav_list active" id="setting.html">
+				<span class="set_bg"></span>
+				<span class="">个人中心</span>
+			</div>
+		</nav>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jq.js"></script>
+		<script type="text/javascript">
+			mui.init()
+
+			function turn(el) {
+				window.location.href = el;
+			}
+			$('.nav_list').click(function() {
+				$('.nav_list').removeClass('active');
+				$(this).addClass('active');
+			})
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style>
+		body {
+			font-size: 14px;
+		}
+		
+		.mui-navigate-right span {
+			margin-left: 30px;
+		}
+		
+		.mui-navigate-right img {
+			width: 20px;
+			position: absolute;
+		}
+		
+		.mui-table-view {
+			margin: 10px 0;
+		}
+	</style>
+
+	<body>
+		<div class="mui-content">
+
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" id="./wx.html" onclick="turn(this.id)">
+					<a class="mui-navigate-right">
+						<img src="../img/weixzf.png" /><span>微信支付</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell" id="./zfb.html" onclick="turn(this.id)">
+					<a class="mui-navigate-right">
+						<img src="../img/zhifb.png" /><span>支付宝支付</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" id="./pos.html" onclick="turn(this.id)">
+					<a class="mui-navigate-right">
+						<img src="../img/pos.png" /><span>POS机收款</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell" id="./cash.html" onclick="turn(this.id)">
+					<a class="mui-navigate-right">
+						<img src="../img/cash.png" /><span>现金收款</span>
+					</a>
+				</li>
+			</ul>
+				<ul class="mui-table-view">
+				<li class="mui-table-view-cell" id="./other.html" onclick="turn(this.id)">
+					<a class="mui-navigate-right">
+						<img src="../img/other.png" /><span>其他方式</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jq.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			
+			function turn(el){
+				window.location.href=el;
+			}
+		</script>
+	</body>
+
+</html>

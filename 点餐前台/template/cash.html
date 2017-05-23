@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style>
+		.tips {
+			background: #FFF2DF;
+			border-bottom: 1px solid #EDEDED;
+			padding:10px 0;
+			align-items: center;
+			display: flex;
+			overflow: hidden;
+		}
+		.tips img{
+			margin: 0 10px 0 10px;
+			height: 20px;
+		}
+		.tips div{
+			
+			height: 20px;
+			line-height: 20px;
+			font-size: 14px;
+		}
+		.common{
+			overflow: hidden;
+			font-size: 14px;
+			padding: 10px;
+			background: #fff;
+		}
+		.sum{
+			margin: 10px 0;
+		}
+		.sum span{
+			margin-left: 10px;
+			font-size: 18px;
+			color: #FF5242;
+		}
+
+		.common input{
+			margin: 0;
+			font-size: 14px;
+			padding-left: 5px;
+			border-color: #fff;
+			height: 20px;
+			width: 80%;
+			float: right;
+		}
+		.bd{
+			border-bottom: 1px solid #e6e6e6;
+		}
+		.start {
+			font-size: 14px;
+			margin: 40px 0;
+			width: 88%;
+			border: 0;
+			background: #FF5242;
+			color: #fff;
+			border-radius: 7px;
+			padding: 10px 0;
+		}
+	</style>
+
+	<body>
+		<div class="mui-content">
+			<div class="tips">
+				<img src="http://testcookingstc.payweipan.com/img/mobile/a_03.png" />
+				<div>提示：当向客户收取现金后点击记账！</div>
+			</div>
+			<div class="common sum">
+				<div>应收金额  <span>￥289.90</span></div>
+			</div>
+			<div class="common bd">
+				<div>收到金额<input type="text" class="" placeholder="请输入找到金额" /> </div>
+			</div>
+			<div class="common">
+				<div>找零金额<input type="text" class="" placeholder="-289.90" /> </div>
+			</div>
+		</div>
+		
+		<footer>
+			<div class="mui-text-center">
+					<button type="button" class="start" id="../index.html" onclick="turn(this.id)">记账</button>
+				</div>
+		</footer>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			function turn(el){
+				window.location.href=el;
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>支付宝收款</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+	<style>
+		body {
+			background: #00AAEE;
+		}
+		
+		.mui-content {
+			background: none;
+		}
+		
+		.inner_head {
+			padding: 25px 0;
+			display: flex;
+			justify-content: center;
+			overflow: hidden;
+		}
+		
+		.inner_head img,
+		.inner_head div {
+			height: 45px;
+			line-height: 45px;
+			float: left;
+		}
+		
+		.inner_head div {
+			margin-left: 10px;
+		}
+		
+		.header {
+			border-radius: 7px;
+			margin-top: 30px;
+			margin-left: 5%;
+			width: 90%;
+			background: #fff;
+		}
+		
+		.cont {
+			text-align: center;
+			border-radius: 7px;
+			margin-top: 10px;
+			margin-left: 5%;
+			width: 90%;
+			background: #fff;
+		}
+		.img_code{
+			padding: 40px 0 20px 0;
+		}
+		.img_code img {
+			width: 50%;
+		}
+		.sum{
+			font-size: 20px;
+		}
+		.cont p {
+			padding: 10px 0 50px 0;
+		}
+		
+		.img_code {
+			position: relative;
+		}
+		
+		.middle {
+			display: flex;
+			align-items: center;
+			text-align: center;
+			background: #fff;
+			width: 15%;
+			height: 25%;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			/*margin-left: -25px;
+			margin-top: -20px;*/
+		}
+		
+		.middle img {
+			margin-left: 5%;
+			width: 90%;
+		}
+	</style>
+
+	<body>
+
+		<div class="mui-content">
+			<div class="header">
+				<div class="inner_head">
+					<img src="http://testcookingstc.payweipan.com/img/mobile/head.png" alt="" />
+					<div>
+						龙井路9号餐厅（杭州店）
+					</div>
+				</div>
+			</div>
+			<div class="cont">
+				<div class="img_code">
+					<div class="middle"><img src="../img/yunzhifu.png" alt="" /></div>
+					<img src="../img/code.png" alt="" />
+				</div>
+				<div class="sum">￥198.80</div>
+				<p>请使用支付宝扫一扫完成付款</p>
+			</div>
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jq.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			
+				function autoHeight() {
+				var height = $('.middle').height();
+				var width = $('.middle').width();
+				$('.middle').css('margin-top', '-'+height / 2+'px');
+				$('.middle').css('margin-left', '-' + width / 2 + 'px');
+			}
+			autoHeight()
+			window.onresize = function() {
+				autoHeight();
+			}
+		</script>
+	</body>
+
+</html>
